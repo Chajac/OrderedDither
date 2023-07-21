@@ -1,0 +1,14 @@
+{
+  "name": "bayer_dither_postprocessing",
+  "version": "1.0",
+  "description": "A bayer dithering and ordered dithering effect for threeJS postprocessing",
+  "main": "index.js",
+  "author": "Chase Jackson",
+  "license": "MIT",
+  "dependencies": {
+    "@react-three/postprocessing": "^2.15.0",
+    "@types/three": "^0.154.0",
+    "three": "^0.154.0",
+    "typescript": "^5.1.6"
+  }
+}
