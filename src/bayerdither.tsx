@@ -13,6 +13,7 @@ export interface IDitherProps {
 	randomize?: boolean;
 	seed?: number;
 	useColor?: boolean;
+	invertDither?: boolean;
 }
 
 // Effect implementation
@@ -25,9 +26,10 @@ export class DitherEffect extends Effect {
 		dOffsetY = 0,
 		xDarkThreshold = 0,
 		yWhiteThreshold = 0,
+		useColor = false,
+		invertDither = false,
 		randomize = false,
 		seed = 0,
-		useColor = false,
 	}: IDitherProps = {}) {
 		const uniforms = new Map<string, Uniform>([
 			["uDitherScale", new Uniform(ditherScale)],
@@ -40,6 +42,7 @@ export class DitherEffect extends Effect {
 			["uRandomize", new Uniform(randomize)],
 			["uSeed", new Uniform(seed)],
 			["uUseColor", new Uniform(useColor)],
+			["uInvertDither", new Uniform(invertDither)],
 		]);
 
 		super("BeyerDither", bayerdither, {
