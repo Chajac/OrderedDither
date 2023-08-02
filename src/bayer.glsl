@@ -8,6 +8,7 @@ uniform float uDarkThreshold;
 uniform float uLightThreshold;
 uniform float uSeed;
 uniform bool uRandomize;
+uniform bool uDitherInvert;
 
 
 float rand(vec2 co) {
