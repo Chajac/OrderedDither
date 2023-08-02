@@ -173,7 +173,15 @@ float RECIPROCAL_MATRIX_SIZE = 1.0 / float(uMatrixSize * uMatrixSize);
     float quantDither = floor((grayscale) * (1.1 + uLightThreshold) + dither);
 
     
-    //Greyscale output
-    outputColor = vec4(vec3(quantDither),1.0);
-    //COLOR OUTPUT
-   //outputColor = vec4(quantizedColor.rgb * quantDither, inputColor.a);
+vec4 oCol;
+    if (uUseColor == false){
+        oCol = vec4(vec3(quantDither),inputColor.a);
+    }else {
+        oCol = vec4(quantizedColor.rgb * quantDither, inputColor.a);
+    }
+    
+    if(uDitherInvert == true){
+        oCol = (1. - oCol);    
+    }
+
+    outputColor = oCol;
