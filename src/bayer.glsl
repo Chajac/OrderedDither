@@ -41,8 +41,8 @@ float bayer8x8[64] = float[64](
             63.0,  31.0, 55.0,  23.0, 61.0,  29.0, 53.0,  21.0
         );
 
-//Define randomized matrices
 
+//Define randomized matrices
 // 2x2 random matrix
 mat2 randomMatrix2x2(float seed) {
     mat2 randomMatrix;
@@ -127,12 +127,10 @@ float RECIPROCAL_MATRIX_SIZE = 1.0 / float(uMatrixSize * uMatrixSize);
         if (uMatrixSize == 2) {
             mat2 matrix = randomMatrix2x2(uSeed);
             dither = matrix[int(mod(ditheredCoord.y, (2.0 + uDitherOffsetY )))][int(mod(ditheredCoord.x, (2.0 + uDitherOffsetX)))] + RECIPROCAL_MATRIX_SIZE * uDarkThreshold;
-            //dither = randomMatrix2x2[int(ditheredCoord.x)%4][int(ditheredCoord.y)%4] ;
         } else if (uMatrixSize == 3) {
 
             mat3 matrix = randomMatrix3x3(uSeed);
             dither = matrix[int(mod(ditheredCoord.y, (3.0 + uDitherOffsetY )))][int(mod(ditheredCoord.x, (3.0 + uDitherOffsetX)))] + RECIPROCAL_MATRIX_SIZE * uDarkThreshold;
-            //dither = randomMatrix2x2[int(ditheredCoord.x)%4][int(ditheredCoord.y)%4] ;
         } else if (uMatrixSize == 4){
             mat4 matrix = randomMatrix4x4(uSeed);
             dither = matrix[int(mod(ditheredCoord.y, (4.0 + uDitherOffsetY )))][int(mod(ditheredCoord.x, (4.0 + uDitherOffsetX)))] + RECIPROCAL_MATRIX_SIZE * uDarkThreshold;
