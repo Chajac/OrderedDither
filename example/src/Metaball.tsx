@@ -25,68 +25,8 @@ function Pointer({ vec = new THREE.Vector3() }) {
 	);
 }
 
-/* function Pointer({ vec = new THREE.Vector3() }) {
-	const ref = useRef<any>();
-	useFrame(({ mouse, viewport }) => {
-		// vec.lerp(
-		// 	{
-		// 		x: (mouse.x * viewport.width) / 2,
-		// 		y: (mouse.y * viewport.height) / 2,
-		// 		z: 0,
-		// 	},
-		// 	0.7
-		// );
-
-		const lerpedVec = new THREE.Vector3(
-			(mouse.x * viewport.width) / 2,
-			(mouse.y * viewport.height) / 2,
-			0
-		);
-
-		vec.lerp(lerpedVec, 0.7);
-		ref.current.setNextKinematicTranslation(vec);
-	});
-	return (
-		<RigidBody
-			position={[0, 0, 0]}
-			type="kinematicPosition"
-			colliders={false}
-			ref={ref}
-		>
-			<mesh>
-				<sphereGeometry args={[0.1]} />
-				<meshBasicMaterial color="red" toneMapped={false} />
-			</mesh>
-			<BallCollider args={[5]} />
-		</RigidBody>
-	);
-} */
-
 function MetaBall({ color, vec = new THREE.Vector3(), ...props }) {
 	const api = useRef<RapierRigidBody>(null);
-	/* 	useFrame((state, delta) => {
-		if (api.current) {
-			const impulseDirection = new THREE.Vector3(
-				5 * delta * 0.0025,
-				-2 * delta * 0.0025,
-				-5 * delta * 0.0025
-			);
-
-			delta = Math.min(0.2, delta);
-			api.current.applyImpulse(
-				vec
-					.copy(api.current.translation())
-					.normalize()
-					.multiply(
-						new THREE.Vector3(
-							5 * delta * 0.0025,
-							-2 * delta * 0.0025,
-							-5 * delta * 0.0025
-						)
-					)
-			);
-		}
-	}); */
 
 	useFrame((state, delta) => {
 		delta = Math.min(delta, 0.01);
@@ -110,8 +50,7 @@ function MetaBall({ color, vec = new THREE.Vector3(), ...props }) {
 						.normalize()
 						.multiplyScalar(delta * 0.02)
 				);
-			} /* 
-		api.current.addTorque({ x: 42, y: 42, z: 0 }); */
+			}
 		}
 	});
 
