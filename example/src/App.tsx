@@ -3,7 +3,7 @@ import "./App.css";
 import { Canvas, Vector3 } from "@react-three/fiber";
 import Text from "./Text";
 import { EffectComposer } from "@react-three/postprocessing";
-import { OrderedDither } from "../../ordered dither/OrderedDither";
+import { OrderedDither } from "../ordered dither/OrderedDither";
 import {
 	MeshTransmissionMaterial,
 	Environment,
