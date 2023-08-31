@@ -1,6 +1,8 @@
 {
 	"name": "ordered_dither_example_project",
 	"private": true,
+	"author": "Chase Jackson",
+	"license": "MIT",
 	"version": "1.0.0",
 	"type": "module",
 	"scripts": {

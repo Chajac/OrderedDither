@@ -1,4 +1,8 @@
-//-- Created by Chase Jackson https://github.com/Chajac --//
+/**
+ * @author Chase Jackson <https://github.com/Chajac>
+ * @version 1.0.0
+ */
+
 
 
 uniform float uColorThreshold;
