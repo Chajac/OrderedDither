@@ -5,8 +5,10 @@ import { forwardRef, useMemo } from "react";
 
 //TODO: Change hardcoded pattern to generative and pass via SSBO?
 const frag = `
-//-- Created by Chase Jackson https://github.com/Chajac --//
-
+/**
+ * @author Chase Jackson <https://github.com/Chajac>
+ * @version 1.0.0
+ */
 
 uniform float uColorThreshold;
 uniform float uDitherScale;
