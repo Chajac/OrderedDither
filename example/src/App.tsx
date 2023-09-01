@@ -14,6 +14,7 @@ import { Pointer, MetaBall } from "./Metaball";
 import { Physics } from "@react-three/rapier";
 
 const [width, height]: number[] = [1920, 1080];
+
 function App() {
 	const Config = useControls({
 		InitialValues: folder({
@@ -23,15 +24,15 @@ function App() {
 		}),
 		DitherSettings: folder({
 			matrixSize: {
-				value: "4",
+				value: 4,
 				options: {
-					"2x2": "2",
-					"3x3": "3",
-					"4x4": "4",
-					"8x8": "8",
+					"2x2": 2,
+					"3x3": 3,
+					"4x4": 4,
+					"8x8": 8,
 
-					vertical: "20",
-					horizontal: "21",
+					vertical: 20,
+					horizontal: 21,
 				},
 			},
 			"8x8 Values": folder({
